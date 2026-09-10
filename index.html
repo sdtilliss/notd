@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>No TDs Pool 2026</title>
+  <meta name="description" content="Fewest touchdowns wins. Live tracker for the 2026 No TDs Pool.">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏈</text></svg>">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="masthead">
+      <div class="masthead-main">
+        <p class="eyebrow">2026 Season · Weeks 1–18</p>
+        <h1>No TDs Pool</h1>
+        <p class="tagline">Fewest touchdowns wins. Every score is damage.</p>
+      </div>
+      <dl class="masthead-stats">
+        <div><dt>Pot</dt><dd id="stat-pot">—</dd></div>
+        <div><dt>TDs allowed</dt><dd id="stat-tds">—</dd></div>
+        <div><dt>Clean rosters</dt><dd id="stat-clean">—</dd></div>
+      </dl>
+    </header>
+
+    <section class="panel" aria-labelledby="standings-h">
+      <div class="panel-head">
+        <h2 id="standings-h">Standings</h2>
+        <span class="hint">Lower is better</span>
+      </div>
+      <ol class="standings" id="standings"></ol>
+    </section>
+
+    <section aria-labelledby="teams-h">
+      <div class="panel-head bare">
+        <h2 id="teams-h">Rosters</h2>
+        <div class="toggle" role="group" aria-label="Sort rosters">
+          <button type="button" data-sort="standings" class="is-active">By standings</button>
+          <button type="button" data-sort="draft">Draft order</button>
+        </div>
+      </div>
+      <div class="teams" id="teams"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="rules-h">
+      <div class="panel-head"><h2 id="rules-h">Rules</h2></div>
+      <ul class="rules" id="rules"></ul>
+    </section>
+
+    <footer class="foot">
+      <span>Updated <time id="updated">—</time></span>
+      <span class="dot">·</span>
+      <span>Source: <em>No TDs Pool 2026</em> sheet</span>
+    </footer>
+
+  </div>
+
+  <script src="data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
