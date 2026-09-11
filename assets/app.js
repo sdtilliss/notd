@@ -40,7 +40,6 @@
 
   function renderStandings(ranked) {
     var list = el("standings");
-    var max = Math.max.apply(null, ranked.map(function (r) { return r.total; }));
     var best = ranked[0].total;
     var leaders = ranked.filter(function (r) { return r.total === best; });
     var everyoneTied = leaders.length === ranked.length;
@@ -49,17 +48,15 @@
 
     ranked.forEach(function (r) {
       var li = document.createElement("li");
-      li.className = "row" + (!everyoneTied && r.total === best ? " is-leader" : "");
-
-      var pct = max > 0 ? (r.total / max) * 100 : 0;
       var isLeader = !everyoneTied && r.total === best;
+      li.className = "row" + (isLeader ? " is-leader" : "") + (r.total ? " burned" : "");
 
       li.innerHTML =
         '<span class="rank">' + r.rank + "</span>" +
         '<span class="who">' + esc(r.owner) +
-          (isLeader ? ' <span class="crown" title="Fewest TDs">👑</span>' : "") +
+          (isLeader ? '<span class="tag">Leads</span>' : "") +
         "</span>" +
-        '<span class="bar"><i style="width:' + pct.toFixed(1) + '%"></i></span>' +
+        tally(r.total) +
         '<span class="tds">' + r.total + "</span>";
 
       list.appendChild(li);
@@ -68,10 +65,10 @@
     var note = document.createElement("p");
     note.className = "tie-note";
     note.textContent = everyoneTied
-      ? "Everyone is tied at " + best + ". Nobody has been burned yet."
+      ? "All nine tied at " + best + ". Nobody has been burned yet."
       : leaders.length > 1
-        ? leaders.length + " way tie at the top — ties split the pot evenly."
-        : leaders[0].owner + " leads with " + best + " TD" + (best === 1 ? "" : "s") + " allowed.";
+        ? leaders.length + "-way tie at the top. Ties split the pot."
+        : leaders[0].owner + " leads at " + best + " TD" + (best === 1 ? "" : "s") + " allowed.";
     list.parentNode.appendChild(note);
   }
 
@@ -87,7 +84,8 @@
 
     rows.forEach(function (r) {
       var card = document.createElement("article");
-      card.className = "team" + (!everyoneTied && r.total === best ? " is-leader" : "");
+      var isLeader = !everyoneTied && r.total === best;
+      card.className = "team" + (isLeader ? " is-leader" : "") + (r.total ? " burned" : "");
 
       var roster = r.roster.slice().sort(function (a, b) {
         return (SLOT_ORDER[a.slot] ?? 9) - (SLOT_ORDER[b.slot] ?? 9);
@@ -95,8 +93,8 @@
 
       card.innerHTML =
         '<div class="team-head">' +
-          "<h3>" + esc(r.owner) + "</h3>" +
-          '<span class="team-total"><b>' + r.total + "</b> TD" + (r.total === 1 ? "" : "s") + "</span>" +
+          "<h3>" + esc(r.owner) + (isLeader ? '<span class="tag">Leads</span>' : "") + "</h3>" +
+          '<span class="team-total">' + r.total + "<small>TD" + (r.total === 1 ? "" : "s") + "</small></span>" +
         "</div>" +
         '<ul class="roster">' +
           roster.map(function (p) {
@@ -116,6 +114,16 @@
     el("rules").innerHTML = POOL.rules.map(function (r) {
       return "<li>" + esc(r) + "</li>";
     }).join("");
+  }
+
+  /* n touchdowns as tally marks: full groups of five get the strike. */
+  function tally(n) {
+    if (!n) return "";
+    var out = [];
+    for (var full = Math.floor(n / 5); full > 0; full--) out.push('<span class="g5" style="--n:4"></span>');
+    var rem = n % 5;
+    if (rem) out.push('<span style="--n:' + rem + '"></span>');
+    return '<span class="tally" aria-hidden="true">' + out.join("") + "</span>";
   }
 
   function esc(s) {
