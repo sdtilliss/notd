@@ -114,7 +114,7 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-09-11T20:21:16+00:00",
+  "ran": "2026-09-11T20:22:30+00:00",
   "throughWeek": 1,
   "events": []
 };
