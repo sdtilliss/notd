@@ -1,0 +1,51 @@
+name: Sync TD totals
+
+on:
+  schedule:
+    # 10:00 UTC daily, Sept through January. nflverse posts play-by-play
+    # around 06:00 UTC, so this leaves a four-hour buffer. (6am ET / 3am PT)
+    - cron: "0 10 * 9-12,1 *"
+  workflow_dispatch:
+    inputs:
+      allow_decrease:
+        description: "Accept totals going down (upstream stat correction)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Recompute totals from nflverse
+        run: |
+          python3 scripts/sync.py ${{ inputs.allow_decrease && '--allow-decrease' || '' }} | tee sync.log
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet -- data.js; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          week=$(sed -nE 's/^sync: through week ([0-9]+),.*/\1/p' sync.log)
+          changes=$(grep -E '^sync:   .+ -> ' sync.log | sed 's/^sync:   //' || true)
+          if [ -n "$changes" ]; then
+            title="Sync TD totals through week $week"
+            body="$changes"
+          else
+            title="Sync heartbeat: through week $week, no changes"
+            body=""
+          fi
+          git config user.name  "notd-sync[bot]"
+          git config user.email "notd-sync[bot]@users.noreply.github.com"
+          git add data.js
+          git commit -m "$title" ${body:+-m "$body"}
+          git push

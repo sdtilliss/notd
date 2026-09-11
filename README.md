@@ -18,22 +18,44 @@ assets/app.js     renders standings + rosters from the data
 data.js           the pool data (rosters, TD counts, rules)
 ```
 
-## Updating TD counts
+## How TD counts update
 
-Everything the site renders lives in `data.js`. Bump a player's `td` value and the standings,
-pot, and card highlighting all recalculate on reload:
+A GitHub Action runs `scripts/sync.py` every morning at 10:00 UTC (6am ET)
+from September through January. It downloads the season's play-by-play from
+[nflverse](https://github.com/nflverse/nflverse-data), recomputes every
+player's total from zero, rewrites `data.js`, and pushes. Vercel redeploys on
+the push. Nothing runs on the site itself; it stays a flat file.
+
+Players are tracked by `gsis_id`, never by name. A player is charged for every
+play where he is the credited scorer (rushing, receiving, returns, fumble
+recoveries -- everything) plus every passing touchdown he throws, which is how
+the pool's rules read.
+
+`data.js` carries two things the sync maintains:
 
 ```js
-{ slot: "RB", name: "Ameer Abdullah", td: 2 }
+{ slot: "RB", name: "Ameer Abdullah", id: "00-0031285", td: 0 }   // td is machine-written
+POOL.sync = { ran, throughWeek, events: [...] }                    // every TD, with the play text
 ```
 
-Commit and push — GitHub Pages redeploys automatically.
+The sync refuses to write anything if the download fails, if any pool id is
+missing from the roster file, if the rewritten file does not parse, or if a
+total would go *down*. That last one exists so an upstream stat correction
+gets a human look instead of silently taking points off someone's board:
 
-## Next up
+```
+Actions -> Sync TD totals -> Run workflow -> tick "allow_decrease"
+```
 
-Right now the TD counts are entered by hand. The intended next step is pulling them
-automatically from an NFL stats source (weekly scoring data keyed by player) and rewriting
-`data.js` on a schedule, so the site updates itself through the season.
+For commissioner rulings on strange plays, add an `adjust` to the player line.
+It is added to the computed count and survives every sync:
+
+```js
+{ slot: "TE", name: "Jelani Woods", id: "00-0037738", td: 1, adjust: -1 }
+```
+
+Run it locally with `python3 scripts/sync.py --dry-run` to see what would
+change without writing.
 
 ## Rules
 
