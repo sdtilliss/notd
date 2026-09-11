@@ -21,9 +21,9 @@ const POOL = {
     { owner: "Brett", roster: [
       { slot: "RB",   name: "Dylan Laube",        td: 0 },
       { slot: "RB",   name: "Rasheen Ali",        td: 0 },
-      { slot: "WR",   name: "Brycen Treymayne",   td: 0 },
+      { slot: "WR",   name: "Brycen Tremayne",   td: 0 },
       { slot: "WR",   name: "Chris Blair",        td: 0 },
-      { slot: "TE",   name: "Nick Kallerup",      td: 0 },
+      { slot: "TE",   name: "Nick Kallerup",      td: 0 }, // wk1: inactive scratch, on the 53 — ruled eligible
       { slot: "TE",   name: "Gavin Bartholomew",  td: 0 },
       { slot: "Flex", name: "Camden Brown",       td: 0 },
       { slot: "Flex", name: "Ian Thomas",         td: 0 }
@@ -53,8 +53,8 @@ const POOL = {
       { slot: "RB",   name: "Audric Estime",    td: 0 },
       { slot: "WR",   name: "Laquon Treadwell", td: 0 },
       { slot: "WR",   name: "Arian Smith",      td: 0 },
-      { slot: "TE",   name: "Colston Yankoff",  td: 0 },
-      { slot: "TE",   name: "Quentin Morris",   td: 0 },
+      { slot: "TE",   name: "Colson Yankoff",  td: 0 },
+      { slot: "TE",   name: "Quintin Morris",   td: 0 },
       { slot: "Flex", name: "Seydou Traore",    td: 0 },
       { slot: "Flex", name: "Charlie Woerner",  td: 0 }
     ]},
@@ -65,7 +65,7 @@ const POOL = {
       { slot: "WR",   name: "Ashton Dulin",     td: 0 },
       { slot: "TE",   name: "Jake Briningstool", td: 0 },
       { slot: "TE",   name: "Jackson Meeks",    td: 0 },
-      { slot: "Flex", name: "Ben Yurosek",      td: 0 },
+      { slot: "Flex", name: "Ben Yurosek",      td: 0 }, // drafted the day before he hit IR — ruled legal
       { slot: "Flex", name: "EJ Jenkins",       td: 0 }
     ]},
     { owner: "Lec", roster: [
