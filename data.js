@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-09-13",
+  updated: "2026-09-14",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -75,12 +75,12 @@ const POOL = {
       { slot: "WR",   name: "Jared Wayne",    id: "00-0038728", td: 0 },
       { slot: "TE",   name: "Tanner Arkin",   id: "00-0041314", td: 0 },
       { slot: "TE",   name: "Carsen Ryan",    id: "00-0041131", td: 0 },
-      { slot: "Flex", name: "Josh Cameron",   id: "00-0041100", td: 0 },
+      { slot: "Flex", name: "Josh Cameron",   id: "00-0041100", td: 1 },
       { slot: "Flex", name: "Jalen Brooks",   id: "00-0038640", td: 0 }
     ]},
     { owner: "Seth", roster: [
       { slot: "RB",   name: "Eli Heidenreich", id: "00-0041490", td: 0 },
-      { slot: "RB",   name: "Devin Singletary", id: "00-0035250", td: 0 },
+      { slot: "RB",   name: "Devin Singletary", id: "00-0035250", td: 1 },
       { slot: "WR",   name: "CJ Daniels",      id: "00-0041399", td: 0 },
       { slot: "WR",   name: "Reggie Virgil",   id: "00-0041070", td: 0 },
       { slot: "TE",   name: "Keleki Latu",     id: "00-0040363", td: 0 },
@@ -114,8 +114,27 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-09-13T14:11:13+00:00",
+  "ran": "2026-09-14T16:14:45+00:00",
   "throughWeek": 1,
-  "events": []
+  "events": [
+    {
+      "week": 1,
+      "game": "2026_01_CLE_JAX",
+      "team": "JAX",
+      "qtr": "1",
+      "desc": "(1:47) 16-T.Lawrence pass short middle to 19-J.Cameron for 4 yards, TOUCHDOWN.",
+      "id": "00-0041100",
+      "kind": "pass"
+    },
+    {
+      "week": 1,
+      "game": "2026_01_DAL_NYG",
+      "team": "NYG",
+      "qtr": "4",
+      "desc": "(7:31) (Shotgun) 6-J.Dart pass short left to 26-D.Singletary for 9 yards, TOUCHDOWN.",
+      "id": "00-0035250",
+      "kind": "pass"
+    }
+  ]
 };
 // --- END SYNC ---
