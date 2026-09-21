@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-09-20",
+  updated: "2026-09-21",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -61,7 +61,7 @@ const POOL = {
     { owner: "Desch", roster: [
       { slot: "RB",   name: "Corey Kiner",      id: "00-0040556", td: 0 },
       { slot: "RB",   name: "Will Shipley",     id: "00-0039746", td: 0 },
-      { slot: "WR",   name: "Darius Cooper",    id: "00-0040024", td: 0 },
+      { slot: "WR",   name: "Darius Cooper",    id: "00-0040024", td: 1 },
       { slot: "WR",   name: "Ashton Dulin",     id: "00-0035021", td: 0 },
       { slot: "TE",   name: "Jake Briningstool", id: "00-0040081", td: 0 },
       { slot: "TE",   name: "Jackson Meeks",    id: "00-0040390", td: 0 },
@@ -71,7 +71,7 @@ const POOL = {
     { owner: "Lec", roster: [
       { slot: "RB",   name: "Raheim Sanders", id: "00-0040466", td: 0 },
       { slot: "RB",   name: "Tyler Badie",    id: "00-0037085", td: 0 },
-      { slot: "WR",   name: "Ryan Miller",    id: "00-0038824", td: 0 },
+      { slot: "WR",   name: "Ryan Miller",    id: "00-0038824", td: 1 },
       { slot: "WR",   name: "Jared Wayne",    id: "00-0038728", td: 0 },
       { slot: "TE",   name: "Tanner Arkin",   id: "00-0041314", td: 0 },
       { slot: "TE",   name: "Carsen Ryan",    id: "00-0041131", td: 0 },
@@ -114,7 +114,7 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-09-20T14:01:49+00:00",
+  "ran": "2026-09-21T16:20:56+00:00",
   "throughWeek": 2,
   "events": [
     {
@@ -133,6 +133,24 @@ POOL.sync = {
       "qtr": "4",
       "desc": "(7:31) (Shotgun) 6-J.Dart pass short left to 26-D.Singletary for 9 yards, TOUCHDOWN.",
       "id": "00-0035250",
+      "kind": "pass"
+    },
+    {
+      "week": 2,
+      "game": "2026_02_MIA_SF",
+      "team": "MIA",
+      "qtr": "4",
+      "desc": "(2:41) (Shotgun) 2-M.Willis pass deep right to 84-R.Miller for 77 yards, TOUCHDOWN.",
+      "id": "00-0038824",
+      "kind": "pass"
+    },
+    {
+      "week": 2,
+      "game": "2026_02_PHI_TEN",
+      "team": "PHI",
+      "qtr": "4",
+      "desc": "(:14) (Shotgun) 1-J.Hurts pass short middle to 80-D.Cooper for 3 yards, TOUCHDOWN.",
+      "id": "00-0040024",
       "kind": "pass"
     }
   ]
