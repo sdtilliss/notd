@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-09-27",
+  updated: "2026-09-28",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -75,7 +75,7 @@ const POOL = {
       { slot: "WR",   name: "Jared Wayne",    id: "00-0038728", td: 0 },
       { slot: "TE",   name: "Tanner Arkin",   id: "00-0041314", td: 0 },
       { slot: "TE",   name: "Carsen Ryan",    id: "00-0041131", td: 0 },
-      { slot: "Flex", name: "Josh Cameron",   id: "00-0041100", td: 1 },
+      { slot: "Flex", name: "Josh Cameron",   id: "00-0041100", td: 2 },
       { slot: "Flex", name: "Jalen Brooks",   id: "00-0038640", td: 0 }
     ]},
     { owner: "Seth", roster: [
@@ -86,7 +86,7 @@ const POOL = {
       { slot: "TE",   name: "Keleki Latu",     id: "00-0040363", td: 0 },
       { slot: "TE",   name: "Jack Endries",    id: "00-0041116", td: 0 },
       { slot: "Flex", name: "Josh Cuevas",     id: "00-0040887", td: 0 },
-      { slot: "Flex", name: "Jeremy Ruckert",  id: "00-0037805", td: 0 }
+      { slot: "Flex", name: "Jeremy Ruckert",  id: "00-0037805", td: 1 }
     ]},
     { owner: "Jarett", roster: [
       { slot: "RB",   name: "Jacob Saylors", id: "00-0038896", td: 0 },
@@ -114,7 +114,7 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-09-27T15:02:21+00:00",
+  "ran": "2026-09-28T18:01:22+00:00",
   "throughWeek": 3,
   "events": [
     {
@@ -151,6 +151,24 @@ POOL.sync = {
       "qtr": "4",
       "desc": "(:14) (Shotgun) 1-J.Hurts pass short middle to 80-D.Cooper for 3 yards, TOUCHDOWN.",
       "id": "00-0040024",
+      "kind": "pass"
+    },
+    {
+      "week": 3,
+      "game": "2026_03_NE_JAX",
+      "team": "JAX",
+      "qtr": "2",
+      "desc": "(13:30) (Shotgun) 16-T.Lawrence pass short middle to 19-J.Cameron for 12 yards, TOUCHDOWN.",
+      "id": "00-0041100",
+      "kind": "pass"
+    },
+    {
+      "week": 3,
+      "game": "2026_03_NYJ_DET",
+      "team": "NYJ",
+      "qtr": "4",
+      "desc": "(11:21) 7-G.Smith pass short middle to 89-J.Ruckert for 4 yards, TOUCHDOWN.",
+      "id": "00-0037805",
       "kind": "pass"
     }
   ]
