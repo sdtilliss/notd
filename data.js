@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-10-04",
+  updated: "2026-10-05",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -26,7 +26,7 @@ const POOL = {
       { slot: "TE",   name: "Nick Kallerup",      id: "00-0040058", td: 0 }, // wk1: inactive scratch, on the 53 — ruled eligible
       { slot: "TE",   name: "Gavin Bartholomew",  id: "00-0040215", td: 0 },
       { slot: "Flex", name: "Camden Brown",       id: "00-0040930", td: 0 },
-      { slot: "Flex", name: "Ian Thomas",         id: "00-0034365", td: 0 }
+      { slot: "Flex", name: "Ian Thomas",         id: "00-0034365", td: 1 }
     ]},
     { owner: "Schneck", roster: [
       { slot: "RB",   name: "Julius Chestnut",       id: "00-0037594", td: 0 },
@@ -61,7 +61,7 @@ const POOL = {
     { owner: "Desch", roster: [
       { slot: "RB",   name: "Corey Kiner",      id: "00-0040556", td: 0 },
       { slot: "RB",   name: "Will Shipley",     id: "00-0039746", td: 0 },
-      { slot: "WR",   name: "Darius Cooper",    id: "00-0040024", td: 1 },
+      { slot: "WR",   name: "Darius Cooper",    id: "00-0040024", td: 3 },
       { slot: "WR",   name: "Ashton Dulin",     id: "00-0035021", td: 0 },
       { slot: "TE",   name: "Jake Briningstool", id: "00-0040081", td: 0 },
       { slot: "TE",   name: "Jackson Meeks",    id: "00-0040390", td: 0 },
@@ -114,7 +114,7 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-10-04T15:11:52+00:00",
+  "ran": "2026-10-05T19:09:13+00:00",
   "throughWeek": 4,
   "events": [
     {
@@ -169,6 +169,33 @@ POOL.sync = {
       "qtr": "4",
       "desc": "(11:21) 7-G.Smith pass short middle to 89-J.Ruckert for 4 yards, TOUCHDOWN.",
       "id": "00-0037805",
+      "kind": "pass"
+    },
+    {
+      "week": 4,
+      "game": "2026_04_KC_LV",
+      "team": "LV",
+      "qtr": "1",
+      "desc": "(8:18) 8-K.Cousins pass deep left to 80-I.Thomas for 27 yards, TOUCHDOWN.",
+      "id": "00-0034365",
+      "kind": "pass"
+    },
+    {
+      "week": 4,
+      "game": "2026_04_LA_PHI",
+      "team": "PHI",
+      "qtr": "2",
+      "desc": "(5:51) (Shotgun) 1-J.Hurts pass deep right to 80-D.Cooper for 18 yards, TOUCHDOWN.",
+      "id": "00-0040024",
+      "kind": "pass"
+    },
+    {
+      "week": 4,
+      "game": "2026_04_LA_PHI",
+      "team": "PHI",
+      "qtr": "2",
+      "desc": "(:09) (Shotgun) 1-J.Hurts pass short middle to 80-D.Cooper for 10 yards, TOUCHDOWN. Penalty on LA-22-T.McDuffie, Illegal Contact, declined.",
+      "id": "00-0040024",
       "kind": "pass"
     }
   ]
