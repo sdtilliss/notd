@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-10-11",
+  updated: "2026-10-12",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -19,7 +19,7 @@ const POOL = {
   slots: ["RB", "RB", "WR", "WR", "TE", "TE", "Flex", "Flex"],
   teams: [
     { owner: "Brett", roster: [
-      { slot: "RB",   name: "Dylan Laube",        id: "00-0039407", td: 0 },
+      { slot: "RB",   name: "Dylan Laube",        id: "00-0039407", td: 1 },
       { slot: "RB",   name: "Rasheen Ali",        id: "00-0039796", td: 0 },
       { slot: "WR",   name: "Brycen Tremayne",   id: "00-0038840", td: 0 },
       { slot: "WR",   name: "Chris Blair",        id: "00-0036463", td: 0 },
@@ -60,8 +60,8 @@ const POOL = {
     ]},
     { owner: "Desch", roster: [
       { slot: "RB",   name: "Corey Kiner",      id: "00-0040556", td: 0 },
-      { slot: "RB",   name: "Will Shipley",     id: "00-0039746", td: 0 },
-      { slot: "WR",   name: "Darius Cooper",    id: "00-0040024", td: 3 },
+      { slot: "RB",   name: "Will Shipley",     id: "00-0039746", td: 1 },
+      { slot: "WR",   name: "Darius Cooper",    id: "00-0040024", td: 4 },
       { slot: "WR",   name: "Ashton Dulin",     id: "00-0035021", td: 0 },
       { slot: "TE",   name: "Jake Briningstool", id: "00-0040081", td: 0 },
       { slot: "TE",   name: "Jackson Meeks",    id: "00-0040390", td: 0 },
@@ -114,7 +114,7 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-10-11T16:11:50+00:00",
+  "ran": "2026-10-12T19:41:55+00:00",
   "throughWeek": 5,
   "events": [
     {
@@ -195,6 +195,33 @@ POOL.sync = {
       "team": "PHI",
       "qtr": "2",
       "desc": "(:09) (Shotgun) 1-J.Hurts pass short middle to 80-D.Cooper for 10 yards, TOUCHDOWN. Penalty on LA-22-T.McDuffie, Illegal Contact, declined.",
+      "id": "00-0040024",
+      "kind": "pass"
+    },
+    {
+      "week": 5,
+      "game": "2026_05_LV_NE",
+      "team": "LV",
+      "qtr": "4",
+      "desc": "(10:54) (Shotgun) 23-D.Laube right tackle for 2 yards, TOUCHDOWN. NE-94-C.Durden was injured during the play. Penalty on NE-99-Da.Jones, Def",
+      "id": "00-0039407",
+      "kind": "rush"
+    },
+    {
+      "week": 5,
+      "game": "2026_05_PHI_JAX",
+      "team": "PHI",
+      "qtr": "2",
+      "desc": "(8:49) 28-W.Shipley up the middle for 2 yards, TOUCHDOWN.",
+      "id": "00-0039746",
+      "kind": "rush"
+    },
+    {
+      "week": 5,
+      "game": "2026_05_PHI_JAX",
+      "team": "PHI",
+      "qtr": "2",
+      "desc": "(5:41) (Shotgun) 1-J.Hurts pass deep right to 80-D.Cooper for 62 yards, TOUCHDOWN.",
       "id": "00-0040024",
       "kind": "pass"
     }
