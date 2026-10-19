@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-10-18",
+  updated: "2026-10-19",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -30,7 +30,7 @@ const POOL = {
     ]},
     { owner: "Schneck", roster: [
       { slot: "RB",   name: "Julius Chestnut",       id: "00-0037594", td: 0 },
-      { slot: "RB",   name: "Roschon Johnson",       id: "00-0039021", td: 0 },
+      { slot: "RB",   name: "Roschon Johnson",       id: "00-0039021", td: 1 },
       { slot: "WR",   name: "Simi Fehoko",           id: "00-0036646", td: 0 },
       { slot: "WR",   name: "J Michael Sturdivant",  id: "00-0040948", td: 0 },
       { slot: "TE",   name: "Bauer Sharp",           id: "00-0041094", td: 0 },
@@ -50,7 +50,7 @@ const POOL = {
     ]},
     { owner: "Mitch", roster: [
       { slot: "RB",   name: "Kene Nwangwu",     id: "00-0036842", td: 0 },
-      { slot: "RB",   name: "Audric Estime",    id: "00-0039373", td: 0 },
+      { slot: "RB",   name: "Audric Estime",    id: "00-0039373", td: 1 },
       { slot: "WR",   name: "Laquon Treadwell", id: "00-0032951", td: 0 },
       { slot: "WR",   name: "Arian Smith",      id: "00-0040582", td: 0 },
       { slot: "TE",   name: "Colson Yankoff",  id: "00-0039686", td: 0 },
@@ -85,7 +85,7 @@ const POOL = {
       { slot: "WR",   name: "Reggie Virgil",   id: "00-0041070", td: 0 },
       { slot: "TE",   name: "Keleki Latu",     id: "00-0040363", td: 0 },
       { slot: "TE",   name: "Jack Endries",    id: "00-0041116", td: 0 },
-      { slot: "Flex", name: "Josh Cuevas",     id: "00-0040887", td: 0 },
+      { slot: "Flex", name: "Josh Cuevas",     id: "00-0040887", td: 1 },
       { slot: "Flex", name: "Jeremy Ruckert",  id: "00-0037805", td: 1 }
     ]},
     { owner: "Jarett", roster: [
@@ -114,7 +114,7 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-10-18T13:51:23+00:00",
+  "ran": "2026-10-19T16:52:09+00:00",
   "throughWeek": 6,
   "events": [
     {
@@ -224,6 +224,33 @@ POOL.sync = {
       "desc": "(5:41) (Shotgun) 1-J.Hurts pass deep right to 80-D.Cooper for 62 yards, TOUCHDOWN.",
       "id": "00-0040024",
       "kind": "pass"
+    },
+    {
+      "week": 6,
+      "game": "2026_06_BAL_CLE",
+      "team": "BAL",
+      "qtr": "1",
+      "desc": "(8:14) 5-T.Huntley pass short middle to 85-J.Cuevas for 2 yards, TOUCHDOWN [53-C.Williams].",
+      "id": "00-0040887",
+      "kind": "pass"
+    },
+    {
+      "week": 6,
+      "game": "2026_06_BAL_CLE",
+      "team": "CLE",
+      "qtr": "4",
+      "desc": "(8:37) 36-A.Estime right guard for 2 yards, TOUCHDOWN.",
+      "id": "00-0039373",
+      "kind": "rush"
+    },
+    {
+      "week": 6,
+      "game": "2026_06_CHI_ATL",
+      "team": "CHI",
+      "qtr": "3",
+      "desc": "(1:54) 23-R.Johnson right guard for 4 yards, TOUCHDOWN.",
+      "id": "00-0039021",
+      "kind": "rush"
     }
   ]
 };
