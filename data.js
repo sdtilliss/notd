@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-10-25",
+  updated: "2026-10-26",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -80,7 +80,7 @@ const POOL = {
     ]},
     { owner: "Seth", roster: [
       { slot: "RB",   name: "Eli Heidenreich", id: "00-0041490", td: 0 },
-      { slot: "RB",   name: "Devin Singletary", id: "00-0035250", td: 1 },
+      { slot: "RB",   name: "Devin Singletary", id: "00-0035250", td: 2 },
       { slot: "WR",   name: "CJ Daniels",      id: "00-0041399", td: 0 },
       { slot: "WR",   name: "Reggie Virgil",   id: "00-0041070", td: 0 },
       { slot: "TE",   name: "Keleki Latu",     id: "00-0040363", td: 0 },
@@ -114,7 +114,7 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-10-25T14:11:13+00:00",
+  "ran": "2026-10-26T16:39:49+00:00",
   "throughWeek": 7,
   "events": [
     {
@@ -250,6 +250,15 @@ POOL.sync = {
       "qtr": "3",
       "desc": "(1:54) 23-R.Johnson right guard for 4 yards, TOUCHDOWN.",
       "id": "00-0039021",
+      "kind": "rush"
+    },
+    {
+      "week": 7,
+      "game": "2026_07_NYG_HOU",
+      "team": "NYG",
+      "qtr": "5",
+      "desc": "(7:33) (Shotgun) 26-D.Singletary up the middle for 30 yards, TOUCHDOWN.",
+      "id": "00-0035250",
       "kind": "rush"
     }
   ]
