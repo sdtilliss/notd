@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-10-29",
+  updated: "2026-10-30",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -114,8 +114,8 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-10-29T16:46:22+00:00",
-  "throughWeek": 7,
+  "ran": "2026-10-30T16:35:59+00:00",
+  "throughWeek": 8,
   "events": [
     {
       "week": 1,
