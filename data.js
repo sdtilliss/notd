@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-11-01",
+  updated: "2026-11-02",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -19,7 +19,7 @@ const POOL = {
   slots: ["RB", "RB", "WR", "WR", "TE", "TE", "Flex", "Flex"],
   teams: [
     { owner: "Brett", roster: [
-      { slot: "RB",   name: "Dylan Laube",        id: "00-0039407", td: 1 },
+      { slot: "RB",   name: "Dylan Laube",        id: "00-0039407", td: 2 },
       { slot: "RB",   name: "Rasheen Ali",        id: "00-0039796", td: 0 },
       { slot: "WR",   name: "Brycen Tremayne",   id: "00-0038840", td: 0 },
       { slot: "WR",   name: "Chris Blair",        id: "00-0036463", td: 0 },
@@ -84,7 +84,7 @@ const POOL = {
       { slot: "WR",   name: "CJ Daniels",      id: "00-0041399", td: 0 },
       { slot: "WR",   name: "Reggie Virgil",   id: "00-0041070", td: 0 },
       { slot: "TE",   name: "Keleki Latu",     id: "00-0040363", td: 0 },
-      { slot: "TE",   name: "Jack Endries",    id: "00-0041116", td: 0 },
+      { slot: "TE",   name: "Jack Endries",    id: "00-0041116", td: 1 },
       { slot: "Flex", name: "Josh Cuevas",     id: "00-0040887", td: 1 },
       { slot: "Flex", name: "Jeremy Ruckert",  id: "00-0037805", td: 1 }
     ]},
@@ -114,7 +114,7 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-11-01T16:40:22+00:00",
+  "ran": "2026-11-02T20:06:43+00:00",
   "throughWeek": 8,
   "events": [
     {
@@ -260,6 +260,24 @@ POOL.sync = {
       "desc": "(7:33) (Shotgun) 26-D.Singletary up the middle for 30 yards, TOUCHDOWN.",
       "id": "00-0035250",
       "kind": "rush"
+    },
+    {
+      "week": 8,
+      "game": "2026_08_LV_NYJ",
+      "team": "LV",
+      "qtr": "2",
+      "desc": "14-A.McNamara kicks 60 yards from NYJ 35 to LV 5. 23-D.Laube for 95 yards, TOUCHDOWN.",
+      "id": "00-0039407",
+      "kind": "return"
+    },
+    {
+      "week": 8,
+      "game": "2026_08_TEN_CIN",
+      "team": "CIN",
+      "qtr": "2",
+      "desc": "(:23) 9-J.Burrow pass short left to 84-J.Endries for 1 yard, TOUCHDOWN.",
+      "id": "00-0041116",
+      "kind": "pass"
     }
   ]
 };
