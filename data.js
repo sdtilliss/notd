@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-11-08",
+  updated: "2026-11-09",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -50,19 +50,19 @@ const POOL = {
     ]},
     { owner: "Mitch", roster: [
       { slot: "RB",   name: "Kene Nwangwu",     id: "00-0036842", td: 0 },
-      { slot: "RB",   name: "Audric Estime",    id: "00-0039373", td: 1 },
+      { slot: "RB",   name: "Audric Estime",    id: "00-0039373", td: 2 },
       { slot: "WR",   name: "Laquon Treadwell", id: "00-0032951", td: 0 },
       { slot: "WR",   name: "Arian Smith",      id: "00-0040582", td: 0 },
       { slot: "TE",   name: "Colson Yankoff",  id: "00-0039686", td: 0 },
       { slot: "TE",   name: "Quintin Morris",   id: "00-0036590", td: 0 },
       { slot: "Flex", name: "Seydou Traore",    id: "00-0041579", td: 0 },
-      { slot: "Flex", name: "Charlie Woerner",  id: "00-0036429", td: 0 }
+      { slot: "Flex", name: "Charlie Woerner",  id: "00-0036429", td: 1 }
     ]},
     { owner: "Desch", roster: [
-      { slot: "RB",   name: "Corey Kiner",      id: "00-0040556", td: 0 },
+      { slot: "RB",   name: "Corey Kiner",      id: "00-0040556", td: 1 },
       { slot: "RB",   name: "Will Shipley",     id: "00-0039746", td: 1 },
       { slot: "WR",   name: "Darius Cooper",    id: "00-0040024", td: 4 },
-      { slot: "WR",   name: "Ashton Dulin",     id: "00-0035021", td: 0 },
+      { slot: "WR",   name: "Ashton Dulin",     id: "00-0035021", td: 1 },
       { slot: "TE",   name: "Jake Briningstool", id: "00-0040081", td: 0 },
       { slot: "TE",   name: "Jackson Meeks",    id: "00-0040390", td: 0 },
       { slot: "Flex", name: "Ben Yurosek",      id: "00-0040509", td: 0 }, // drafted the day before he hit IR — ruled legal
@@ -92,7 +92,7 @@ const POOL = {
       { slot: "RB",   name: "Jacob Saylors", id: "00-0038896", td: 0 },
       { slot: "RB",   name: "DJ Giddens",    id: "00-0040179", td: 0 },
       { slot: "WR",   name: "Nikko Remigio", id: "00-0038519", td: 0 },
-      { slot: "WR",   name: "Derius Davis",  id: "00-0038573", td: 0 },
+      { slot: "WR",   name: "Derius Davis",  id: "00-0038573", td: 1 },
       { slot: "TE",   name: "Jelani Woods",  id: "00-0037755", td: 0 },
       { slot: "TE",   name: "Justin Joly",   id: "00-0041077", td: 0 },
       { slot: "Flex", name: "Marlin Klein",  id: "00-0041472", td: 0 },
@@ -114,7 +114,7 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-11-08T16:33:33+00:00",
+  "ran": "2026-11-09T20:31:57+00:00",
   "throughWeek": 9,
   "events": [
     {
@@ -277,6 +277,51 @@ POOL.sync = {
       "qtr": "2",
       "desc": "(:23) 9-J.Burrow pass short left to 84-J.Endries for 1 yard, TOUCHDOWN.",
       "id": "00-0041116",
+      "kind": "pass"
+    },
+    {
+      "week": 9,
+      "game": "2026_09_CIN_ATL",
+      "team": "ATL",
+      "qtr": "1",
+      "desc": "(11:17) 62-C.Levin and 68-K.Hinton reported in as eligible. 9-M.Penix pass short right to 89-C.Woerner for 1 yard, TOUCHDOWN.",
+      "id": "00-0036429",
+      "kind": "pass"
+    },
+    {
+      "week": 9,
+      "game": "2026_09_CLE_NO",
+      "team": "NO",
+      "qtr": "4",
+      "desc": "(1:00) (Shotgun) 30-A.Estime left tackle for 2 yards, TOUCHDOWN.",
+      "id": "00-0039373",
+      "kind": "rush"
+    },
+    {
+      "week": 9,
+      "game": "2026_09_DAL_IND",
+      "team": "IND",
+      "qtr": "3",
+      "desc": "(1:27) (Shotgun) 17-D.Jones pass short left to 16-A.Dulin for 55 yards, TOUCHDOWN.",
+      "id": "00-0035021",
+      "kind": "pass"
+    },
+    {
+      "week": 9,
+      "game": "2026_09_GB_NE",
+      "team": "NE",
+      "qtr": "4",
+      "desc": "(4:00) 9-C.Kiner left end for 4 yards, TOUCHDOWN. GB-58-I.McDuffie was injured during the play.",
+      "id": "00-0040556",
+      "kind": "rush"
+    },
+    {
+      "week": 9,
+      "game": "2026_09_HOU_LAC",
+      "team": "LAC",
+      "qtr": "4",
+      "desc": "(4:24) (Shotgun) 7-D.Uiagalelei pass short middle to 12-D.Davis for 15 yards, TOUCHDOWN.",
+      "id": "00-0038573",
       "kind": "pass"
     }
   ]
