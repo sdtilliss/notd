@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-11-09",
+  updated: "2026-11-10",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -83,7 +83,7 @@ const POOL = {
       { slot: "RB",   name: "Devin Singletary", id: "00-0035250", td: 2 },
       { slot: "WR",   name: "CJ Daniels",      id: "00-0041399", td: 0 },
       { slot: "WR",   name: "Reggie Virgil",   id: "00-0041070", td: 0 },
-      { slot: "TE",   name: "Keleki Latu",     id: "00-0040363", td: 0 },
+      { slot: "TE",   name: "Keleki Latu",     id: "00-0040363", td: 1 },
       { slot: "TE",   name: "Jack Endries",    id: "00-0041116", td: 1 },
       { slot: "Flex", name: "Josh Cuevas",     id: "00-0040887", td: 1 },
       { slot: "Flex", name: "Jeremy Ruckert",  id: "00-0037805", td: 1 }
@@ -114,7 +114,7 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-11-09T20:31:57+00:00",
+  "ran": "2026-11-10T17:35:33+00:00",
   "throughWeek": 9,
   "events": [
     {
@@ -277,6 +277,15 @@ POOL.sync = {
       "qtr": "2",
       "desc": "(:23) 9-J.Burrow pass short left to 84-J.Endries for 1 yard, TOUCHDOWN.",
       "id": "00-0041116",
+      "kind": "pass"
+    },
+    {
+      "week": 9,
+      "game": "2026_09_BUF_MIN",
+      "team": "BUF",
+      "qtr": "2",
+      "desc": "(:53) (Shotgun) 17-J.Allen pass deep right to 83-K.Latu for 25 yards, TOUCHDOWN [43-A.Van Ginkel].",
+      "id": "00-0040363",
       "kind": "pass"
     },
     {
