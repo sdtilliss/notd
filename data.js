@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-11-15",
+  updated: "2026-11-16",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -24,7 +24,7 @@ const POOL = {
       { slot: "WR",   name: "Brycen Tremayne",   id: "00-0038840", td: 0 },
       { slot: "WR",   name: "Chris Blair",        id: "00-0036463", td: 0 },
       { slot: "TE",   name: "Nick Kallerup",      id: "00-0040058", td: 0 }, // wk1: inactive scratch, on the 53 — ruled eligible
-      { slot: "TE",   name: "Gavin Bartholomew",  id: "00-0040215", td: 0 },
+      { slot: "TE",   name: "Gavin Bartholomew",  id: "00-0040215", td: 1 },
       { slot: "Flex", name: "Camden Brown",       id: "00-0040930", td: 0 },
       { slot: "Flex", name: "Ian Thomas",         id: "00-0034365", td: 1 }
     ]},
@@ -32,7 +32,7 @@ const POOL = {
       { slot: "RB",   name: "Julius Chestnut",       id: "00-0037594", td: 0 },
       { slot: "RB",   name: "Roschon Johnson",       id: "00-0039021", td: 1 },
       { slot: "WR",   name: "Simi Fehoko",           id: "00-0036646", td: 0 },
-      { slot: "WR",   name: "J Michael Sturdivant",  id: "00-0040948", td: 0 },
+      { slot: "WR",   name: "J Michael Sturdivant",  id: "00-0040948", td: 1 },
       { slot: "TE",   name: "Bauer Sharp",           id: "00-0041094", td: 0 },
       { slot: "TE",   name: "Hunter Long",           id: "00-0037004", td: 0 },
       { slot: "Flex", name: "Dallen Bentley",        id: "00-0041133", td: 0 },
@@ -41,7 +41,7 @@ const POOL = {
     { owner: "Tilly", roster: [
       { slot: "RB",   name: "Ameer Abdullah",    id: "00-0032104", td: 0 },
       { slot: "RB",   name: "Ronnie Rivers",     id: "00-0037557", td: 0 },
-      { slot: "WR",   name: "Dohnte Meyers",     id: "00-0040785", td: 0 },
+      { slot: "WR",   name: "Dohnte Meyers",     id: "00-0040785", td: 1 },
       { slot: "WR",   name: "CJ Williams",       id: "00-0041106", td: 0 },
       { slot: "TE",   name: "Feleipe Franks",    id: "00-0036825", td: 0 },
       { slot: "TE",   name: "Mark Redman",       id: "00-0040598", td: 0 },
@@ -51,7 +51,7 @@ const POOL = {
     { owner: "Mitch", roster: [
       { slot: "RB",   name: "Kene Nwangwu",     id: "00-0036842", td: 0 },
       { slot: "RB",   name: "Audric Estime",    id: "00-0039373", td: 2 },
-      { slot: "WR",   name: "Laquon Treadwell", id: "00-0032951", td: 0 },
+      { slot: "WR",   name: "Laquon Treadwell", id: "00-0032951", td: 1 },
       { slot: "WR",   name: "Arian Smith",      id: "00-0040582", td: 0 },
       { slot: "TE",   name: "Colson Yankoff",  id: "00-0039686", td: 0 },
       { slot: "TE",   name: "Quintin Morris",   id: "00-0036590", td: 0 },
@@ -75,7 +75,7 @@ const POOL = {
       { slot: "WR",   name: "Jared Wayne",    id: "00-0038728", td: 0 },
       { slot: "TE",   name: "Tanner Arkin",   id: "00-0041314", td: 0 },
       { slot: "TE",   name: "Carsen Ryan",    id: "00-0041131", td: 0 },
-      { slot: "Flex", name: "Josh Cameron",   id: "00-0041100", td: 2 },
+      { slot: "Flex", name: "Josh Cameron",   id: "00-0041100", td: 3 },
       { slot: "Flex", name: "Jalen Brooks",   id: "00-0038640", td: 0 }
     ]},
     { owner: "Seth", roster: [
@@ -114,7 +114,7 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-11-15T16:52:17+00:00",
+  "ran": "2026-11-16T20:08:09+00:00",
   "throughWeek": 10,
   "events": [
     {
@@ -331,6 +331,51 @@ POOL.sync = {
       "qtr": "4",
       "desc": "(4:24) (Shotgun) 7-D.Uiagalelei pass short middle to 12-D.Davis for 15 yards, TOUCHDOWN.",
       "id": "00-0038573",
+      "kind": "pass"
+    },
+    {
+      "week": 10,
+      "game": "2026_10_JAX_TEN",
+      "team": "JAX",
+      "qtr": "4",
+      "desc": "(9:50) 16-T.Lawrence pass deep right to 19-J.Cameron for 25 yards, TOUCHDOWN.",
+      "id": "00-0041100",
+      "kind": "pass"
+    },
+    {
+      "week": 10,
+      "game": "2026_10_MIA_IND",
+      "team": "IND",
+      "qtr": "2",
+      "desc": "(:44) (Shotgun) 17-D.Jones pass short left to 13-L.Treadwell for 7 yards, TOUCHDOWN.",
+      "id": "00-0032951",
+      "kind": "pass"
+    },
+    {
+      "week": 10,
+      "game": "2026_10_MIN_GB",
+      "team": "GB",
+      "qtr": "3",
+      "desc": "(5:43) (No Huddle) 10-J.Love pass deep right to 87-J.Sturdivant for 32 yards, TOUCHDOWN.",
+      "id": "00-0040948",
+      "kind": "pass"
+    },
+    {
+      "week": 10,
+      "game": "2026_10_MIN_GB",
+      "team": "MIN",
+      "qtr": "4",
+      "desc": "(8:36) (Shotgun) 8-K.Cousins pass short middle to 86-G.Bartholomew for 20 yards, TOUCHDOWN.",
+      "id": "00-0040215",
+      "kind": "pass"
+    },
+    {
+      "week": 10,
+      "game": "2026_10_PIT_CIN",
+      "team": "CIN",
+      "qtr": "2",
+      "desc": "(:14) (Shotgun) 9-J.Burrow pass short middle to 81-D.Meyers for 15 yards, TOUCHDOWN [94-Y.Black].",
+      "id": "00-0040785",
       "kind": "pass"
     }
   ]
