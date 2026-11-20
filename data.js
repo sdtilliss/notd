@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-11-19",
+  updated: "2026-11-20",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -95,7 +95,7 @@ const POOL = {
       { slot: "WR",   name: "Derius Davis",  id: "00-0038573", td: 1 },
       { slot: "TE",   name: "Jelani Woods",  id: "00-0037755", td: 0 },
       { slot: "TE",   name: "Justin Joly",   id: "00-0041077", td: 0 },
-      { slot: "Flex", name: "Marlin Klein",  id: "00-0041472", td: 0 },
+      { slot: "Flex", name: "Marlin Klein",  id: "00-0041472", td: 1 },
       { slot: "Flex", name: "Cade Stover",   id: "00-0039359", td: 0 }
     ]},
     { owner: "Shaps", roster: [
@@ -114,8 +114,8 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-11-19T18:55:37+00:00",
-  "throughWeek": 10,
+  "ran": "2026-11-20T18:25:48+00:00",
+  "throughWeek": 11,
   "events": [
     {
       "week": 1,
@@ -376,6 +376,15 @@ POOL.sync = {
       "qtr": "2",
       "desc": "(:14) (Shotgun) 9-J.Burrow pass short middle to 81-D.Meyers for 15 yards, TOUCHDOWN [94-Y.Black].",
       "id": "00-0040785",
+      "kind": "pass"
+    },
+    {
+      "week": 11,
+      "game": "2026_11_IND_HOU",
+      "team": "HOU",
+      "qtr": "3",
+      "desc": "(4:28) (Shotgun) 7-C.Stroud pass short right to 83-M.Klein for 13 yards, TOUCHDOWN. ** Injury Update: IND-34-K.Gushiken has returned to the ",
+      "id": "00-0041472",
       "kind": "pass"
     }
   ]
