@@ -4,7 +4,7 @@
  */
 const POOL = {
   season: 2026,
-  updated: "2026-11-22",
+  updated: "2026-11-23",
   buyIn: { base: 20, perTd: 10 },
   rules: [
     "Buy in for everyone: $20 base + $10 per TD scored.",
@@ -26,12 +26,12 @@ const POOL = {
       { slot: "TE",   name: "Nick Kallerup",      id: "00-0040058", td: 0 }, // wk1: inactive scratch, on the 53 — ruled eligible
       { slot: "TE",   name: "Gavin Bartholomew",  id: "00-0040215", td: 1 },
       { slot: "Flex", name: "Camden Brown",       id: "00-0040930", td: 0 },
-      { slot: "Flex", name: "Ian Thomas",         id: "00-0034365", td: 1 }
+      { slot: "Flex", name: "Ian Thomas",         id: "00-0034365", td: 2 }
     ]},
     { owner: "Schneck", roster: [
       { slot: "RB",   name: "Julius Chestnut",       id: "00-0037594", td: 0 },
       { slot: "RB",   name: "Roschon Johnson",       id: "00-0039021", td: 1 },
-      { slot: "WR",   name: "Simi Fehoko",           id: "00-0036646", td: 0 },
+      { slot: "WR",   name: "Simi Fehoko",           id: "00-0036646", td: 1 },
       { slot: "WR",   name: "J Michael Sturdivant",  id: "00-0040948", td: 1 },
       { slot: "TE",   name: "Bauer Sharp",           id: "00-0041094", td: 0 },
       { slot: "TE",   name: "Hunter Long",           id: "00-0037004", td: 0 },
@@ -114,7 +114,7 @@ const POOL = {
 // --- BEGIN SYNC (rewritten by scripts/sync.py; do not hand-edit) ---
 POOL.sync = {
   "source": "nflverse play_by_play_2026",
-  "ran": "2026-11-22T17:41:35+00:00",
+  "ran": "2026-11-23T21:57:02+00:00",
   "throughWeek": 11,
   "events": [
     {
@@ -380,11 +380,29 @@ POOL.sync = {
     },
     {
       "week": 11,
+      "game": "2026_11_ARI_KC",
+      "team": "ARI",
+      "qtr": "2",
+      "desc": "(9:53) 9-J.Johnson pass short right to 80-S.Fehoko for 2 yards, TOUCHDOWN.",
+      "id": "00-0036646",
+      "kind": "pass"
+    },
+    {
+      "week": 11,
       "game": "2026_11_IND_HOU",
       "team": "HOU",
       "qtr": "3",
       "desc": "(4:28) (Shotgun) 7-C.Stroud pass short right to 83-M.Klein for 13 yards, TOUCHDOWN. ** Injury Update: IND-34-K.Gushiken has returned to the ",
       "id": "00-0041472",
+      "kind": "pass"
+    },
+    {
+      "week": 11,
+      "game": "2026_11_LV_DEN",
+      "team": "LV",
+      "qtr": "3",
+      "desc": "(5:20) 15-F.Mendoza pass short right to 80-I.Thomas for 19 yards, TOUCHDOWN.",
+      "id": "00-0034365",
       "kind": "pass"
     }
   ]
